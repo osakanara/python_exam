@@ -6,10 +6,11 @@ from os import path
 形態素解析を行い、画像として出力する
 file_path:対象ファイルパス
 fontpath:表示するときのフォントの保存場所
+output_file_path:出力ファイルのパス
 '''
 
 
-def morphological_analysis(file_path, fontpath):
+def morphological_analysis(file_path, fontpath, output_file_path):
     try:
         with open(file_path) as src:
             tokenizer = Tokenizer()
@@ -29,7 +30,7 @@ def morphological_analysis(file_path, fontpath):
             try:
                 wordcloud = WordCloud(background_color="white", font_path=fontpath, width=900, height=500).generate(text)
                 # ファイルに書き出し
-                wordcloud.to_file(path.join(path.dirname(__file__), 'sample.png'))
+                wordcloud.to_file(path.join(path.dirname(__file__), output_file_path))
             except Exception as e:
                 print(e.__str__())
 

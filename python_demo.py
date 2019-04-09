@@ -12,6 +12,7 @@ except_noise(
 
 morphological_analysis(
     file_path='after.txt',
-    fontpath='/system/library/Fonts/ヒラギノ明朝 ProN.ttc'
+    fontpath='/system/library/Fonts/ヒラギノ明朝 ProN.ttc',
+    output_file_path='sample.png'
 )
 
